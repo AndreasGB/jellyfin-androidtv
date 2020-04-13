@@ -13,6 +13,7 @@ import kotlinx.coroutines.withContext
 import org.jellyfin.androidtv.TvApp
 import org.jellyfin.androidtv.details.fragments.EpisodeDetailsFragment
 import org.jellyfin.androidtv.details.fragments.MovieDetailsFragment
+import org.jellyfin.androidtv.details.fragments.SeriesDetailsFragment
 import org.jellyfin.androidtv.model.itemtypes.*
 import org.jellyfin.androidtv.util.apiclient.getItem
 import org.jellyfin.androidtv.util.apiclient.liftToNewFormat
@@ -42,6 +43,7 @@ class DetailsActivity : FragmentActivity() {
 
 			fragment = when (item) {
 				is Movie -> MovieDetailsFragment(item)
+				is Series -> SeriesDetailsFragment(item)
 				is Episode -> EpisodeDetailsFragment(item)
 				is Video -> TODO("Video details are not yet implemented")
 				is LocalTrailer -> TODO("Trailer details are not yet implemented")

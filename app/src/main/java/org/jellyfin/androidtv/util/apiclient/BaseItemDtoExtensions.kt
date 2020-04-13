@@ -18,6 +18,8 @@ fun BaseItemDto.liftToNewFormat() : BaseItem {
 		// Movies
 		BaseItemType.Movie -> Movie(this, multiTrailerLifter)
 
+		BaseItemType.Series -> Series(this)
+
 		// TV
 		BaseItemType.Episode -> Episode(this)
 

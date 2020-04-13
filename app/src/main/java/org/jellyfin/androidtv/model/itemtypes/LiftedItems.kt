@@ -82,6 +82,8 @@ class Movie(original: BaseItemDto, externalTrailerLifter: BaseTrailerLifter) : P
 	val externalTrailers: List<ExternalTrailer> = original.remoteTrailers.mapNotNull { externalTrailerLifter.lift(it) }
 }
 
+class Series(original: BaseItemDto) : BaseItem(original)
+
 class LocalTrailer(original: BaseItemDto) : PlayableItem(original)
 
 class Video(original: BaseItemDto) : PlayableItem(original)
